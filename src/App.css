@@ -1,29 +1,107 @@
-.app {
-  font-family: Arial, sans-serif;
+/* Tailwind utility classes are used directly in components. */
+button.small {
+  margin-top: 0.5rem;
 }
 
-nav {
-  background-color: #333;
-  color: white;
+button.danger:hover {
+  background: #b91c1c;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+.error {
+  color: #dc2626;
+  margin-bottom: 1rem;
+}
+
+.note {
+  margin: 1rem 0;
   padding: 1rem;
+  border-radius: 0.75rem;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
 }
 
-nav h1 {
-  margin: 0;
+.dashboard-page {
+  display: grid;
+  gap: 2rem;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
+.dashboard-header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 1rem;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
+.dashboard-section {
+  display: grid;
+  gap: 2rem;
 }
 
-main {
+.column {
+  display: grid;
+  gap: 1rem;
+}
+
+.card-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.small-card {
   padding: 1rem;
 }
+
+.section-block {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.85rem;
+  background: #f8fafc;
+}
+
+.nested-card {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 0.9rem;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+}
+
+.set-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.button-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+@media (min-width: 900px) {
+  .dashboard-section {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .set-row {
+    grid-template-columns: 1fr;
+  }
+}
+

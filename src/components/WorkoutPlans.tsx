@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { apiClient, WorkoutPlan } from '../api';
+import { apiClient } from '../api';
+import type { WorkoutPlan } from '../api';
 
 const WorkoutPlans = () => {
   const [plans, setPlans] = useState<WorkoutPlan[]>([]);
